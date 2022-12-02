@@ -1,0 +1,32 @@
+---
+import Card from "./Card.astro";
+const CardData = [
+  { title: "Sleep", body: "Resources to improve sleep quality ❤️", href: "" },
+  { title: "Exercise", body: "Resources to improve sleep quality ", href: "" },
+  { title: "Purpose", body: "Resources to improve sleep quality", href: "" },
+  { title: "Nutrition", body: "Resources to improve sleep quality", href: "" },
+  {
+    title: "Relationships",
+    body: "Resources to improve sleep quality",
+    href: "",
+  },
+  { title: "BioHacking", body: "Resources to improve sleep quality", href: "" },
+  {
+    title: "Stress/Anxiety",
+    body: "Resources to improve sleep quality",
+    href: "",
+  },
+];
+---
+
+<section class="py-4">
+  <div
+    class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white"
+  >
+    {
+      CardData.map((card) => (
+        <Card href={card.href} body={card.body} title={card.title} />
+      ))
+    }
+  </div>
+</section>
