@@ -1,20 +1,47 @@
 ---
 import Card from "./Card.astro";
 const CardData = [
-  { title: "Sleep", body: "Resources to improve sleep quality ❤️", href: "" },
-  { title: "Exercise", body: "Resources to improve sleep quality ", href: "" },
-  { title: "Purpose", body: "Resources to improve sleep quality", href: "" },
-  { title: "Nutrition", body: "Resources to improve sleep quality", href: "" },
+  {
+    title: "Sleep",
+    body: "Resources to improve sleep quality ❤️",
+    href: "",
+    icon: "😴",
+  },
+  {
+    title: "Exercise",
+    body: "Resources to improve sleep quality ",
+    href: "",
+    icon: "💪",
+  },
+  {
+    title: "Purpose",
+    body: "Resources to improve sleep quality",
+    href: "",
+    icon: "🌄",
+  },
+  {
+    title: "Nutrition",
+    body: "Resources to improve sleep quality",
+    href: "",
+    icon: "🥑",
+  },
   {
     title: "Relationships",
     body: "Resources to improve sleep quality",
     href: "",
+    icon: "🧑‍🤝‍🧑",
   },
-  { title: "BioHacking", body: "Resources to improve sleep quality", href: "" },
+  {
+    title: "BioHacking",
+    body: "Resources to improve sleep quality",
+    href: "",
+    icon: "🧠",
+  },
   {
     title: "Stress/Anxiety",
     body: "Resources to improve sleep quality",
     href: "",
+    icon: "😰",
   },
 ];
 ---
@@ -25,7 +52,12 @@ const CardData = [
   >
     {
       CardData.map((card) => (
-        <Card href={card.href} body={card.body} title={card.title} />
+        <Card
+          href={card.href}
+          body={card.body}
+          title={card.title}
+          icon={card.icon}
+        />
       ))
     }
   </div>
