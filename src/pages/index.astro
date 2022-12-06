@@ -1,4 +1,12 @@
 ---
+export interface Props {
+  title: string;
+  body: string;
+  href: string;
+  icon: string;
+}
+
+const { href, title, body, icon } = Astro.props;
 import Layout from "../layouts/PageLayout.astro";
 import Card from "../components/CardData.astro";
 import Hero from "../components/Hero.astro";
@@ -6,7 +14,26 @@ import Hero from "../components/Hero.astro";
 
 <Layout title="Home - Health Toolkit">
   <Hero />
-  <Card />
+  <Card>
+    <a
+      href={href}
+      class="lock max-w-sm p-6 bg-gray-100 border border-gray-200 rounded-lg shadow-md hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+    >
+      <div class="flex items-center mb-2">
+        <h2
+          class="text-xl font-bold text-gray-900 dark:text-white sm:text-left"
+        >
+          <span class="mr-2 text-2xl">{icon}</span>{title}
+          <span>&rarr;</span>
+        </h2>
+      </div>
+      <p
+        class="text-base text-gray-700 dark:text-gray-400 text-md sm:text-left"
+      >
+        {body}
+      </p>
+    </a>
+  </Card>
 </Layout>
 
 <style>
