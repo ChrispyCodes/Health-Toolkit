@@ -1,0 +1,14 @@
+---
+import Item from "../../components/blog/BlogList.astro";
+const { posts } = Astro.props;
+---
+
+<ul>
+  {
+    posts.map((post: any) => (
+      <article class="mb-10 -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50">
+        <Item post={post} />
+      </article>
+    ))
+  }
+</ul>

@@ -1,0 +1,49 @@
+---
+// import { getFormattedDate } from '~/utils/utils';
+const { post } = Astro.props;
+---
+
+<a
+  href={`/${post.frontmatter.slug}`}
+  class="flex flex-col gap-y-3 hover:bg-slate-50/70 dark:hover:bg-slate-800/70 p-4 mb-8 transition-colors rounded-xl"
+>
+  <h2
+    class="text-gradient text-xl sm:text-2xl font-bold leading-snug mb-2 font-heading"
+  >
+    {post.frontmatter.title}
+  </h2>
+
+  <p class="text-base sm:text-base flex-grow">
+    {post.frontmatter.excerpt || post.frontmatter.description}
+  </p>
+  <!-- <a
+    href={`/${post.slug}`}
+    class="mt-4 flex items-center text-sm text-sky-500 dark:text-slate-400"
+  >
+    <span class="text-sky-500 font-medium">
+      Read more
+   
+    </span>
+    <svg
+      class="relative mt-px overflow-visible ml-2.5 text-sky-300 dark:text-sky-700"
+      width="3"
+      height="6"
+      viewBox="0 0 3 6"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path d="M0 0L3 3L0 6"></path>
+    </svg>
+  </a> -->
+</a>
+<style>
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>
