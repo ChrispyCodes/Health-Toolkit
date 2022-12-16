@@ -9,12 +9,14 @@ export interface Props {
 const { href, title, body, icon } = Astro.props;
 import Layout from "../layouts/PageLayout.astro";
 import Card from "../components/CardData.astro";
+import TopicCard from "../components/CardData.astro";
 import Hero from "../components/Hero.astro";
 ---
 
 <Layout title="Home - Health Toolkit">
   <Hero />
-  <Card>
+  <TopicCard />
+  <!-- <Card>
     <a
       href={href}
       class="lock max-w-sm p-6 bg-gray-100 border border-gray-200 rounded-lg shadow-md hover:bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
@@ -33,7 +35,7 @@ import Hero from "../components/Hero.astro";
         {body}
       </p>
     </a>
-  </Card>
+  </Card> -->
 </Layout>
 
 <style>
